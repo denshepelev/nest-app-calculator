@@ -1,6 +1,6 @@
-enum Method {
+export enum Method {
   Addition = 'ADD',
-  multiplication = 'MUL',
+  Multiplication = 'MUL',
   Division = 'DIV',
   Substraction = 'SUB',
 }

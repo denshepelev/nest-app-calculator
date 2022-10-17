@@ -1,15 +1,10 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
-import { CalculateDto } from './calculate.dto';
+import { CalculateDto } from '../model/calculate.dto';
+import { Method } from '../types/method.enum';
 
 @Injectable()
 export class CalculateService {
   calculate(firstNum: number, secondNum: number, method: string): CalculateDto {
-    enum Method {
-      Addition = 'ADD',
-      Multiplication = 'MUL',
-      Division = 'DIV',
-      Substraction = 'SUB',
-    }
     switch (method) {
       case Method.Addition: {
         return new CalculateDto(firstNum + secondNum);
