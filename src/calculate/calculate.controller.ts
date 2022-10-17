@@ -1,16 +1,16 @@
 import { Controller, Get, ParseFloatPipe, Query } from '@nestjs/common';
-import { ResultDto } from 'src/dto/result.dto';
-import { ResultService } from 'src/result/result.service';
+import { CalculateDto } from './calculate.dto';
+import { CalculateService } from './calculate.service';
 
 @Controller('calculate')
 export class CalculateController {
-  constructor(private readonly resultService: ResultService) {}
+  constructor(private readonly resultService: CalculateService) {}
   @Get()
   calculate(
-    @Query('firstArg', ParseFloatPipe) firstArg: number,
-    @Query('secondArg', ParseFloatPipe) secondArg: number,
+    @Query('firstNum', ParseFloatPipe) firstNum: number,
+    @Query('secondNum', ParseFloatPipe) secondNum: number,
     @Query('method') method: string,
-  ): ResultDto {
-    return this.resultService.calculate(firstArg, secondArg, method);
+  ): CalculateDto {
+    return this.resultService.calculate(firstNum, secondNum, method);
   }
 }

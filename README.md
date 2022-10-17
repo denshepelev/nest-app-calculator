@@ -24,7 +24,21 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Приложение "Калькулятор" с использованием фреймворка [Nest (NestJS)](https://github.com/nestjs/nest) и кода на [TypeScript](http://www.typescriptlang.org/) .
+Приложение умеет совершать простейшие математические операции.
+
+Пример работы:
+Отправляется GET - запрос на вычисление суммы/вычитания/умножения/деления
+двух чисел, в ответ в body приходит результат вычисления.
+
+## Swagger
+
+- Документация Swagger: http://localhost:3000/api
+- Swagger JSON file: http://localhost:3000/api-json
+
+## Request example
+
+1. http://localhost:3000/calculate?firstNum=100&secondNum=200&method=ADD
 
 ## Installation
 
@@ -50,24 +64,8 @@ $ npm run start:prod
 ```bash
 # unit tests
 $ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
 ```
 
-## Support
+## See my other App for Neoflex Java Development
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+- [VacationPayService](https://github.com/denshepelev/money)
