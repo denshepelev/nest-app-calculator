@@ -1,6 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { Method } from '../types/method.enum';
-import { CalculateDto } from '../model/calculate.dto';
 import { CalculateService } from './calculate.service';
 
 describe('ResultService', () => {
@@ -18,9 +17,19 @@ describe('ResultService', () => {
     expect(service).toBeDefined();
   });
 
-  it('Should return result 110', () => {
-    expect(service.calculate(100, 10, Method.Division)).toEqual(
-      new CalculateDto(10),
-    );
+  it('Should return result 10 for division', () => {
+    expect(service.calculate(100, 10, Method.Division).result).toBe(10);
+  });
+
+  it('Should return result 250 for addition', () => {
+    expect(service.calculate(200, 50, Method.Addition).result).toBe(250);
+  });
+
+  it('Should return result 100 for substraction', () => {
+    expect(service.calculate(150, 50, Method.Substraction).result).toBe(100);
+  });
+
+  it('Should return result 2500 for multiplication', () => {
+    expect(service.calculate(50, 50, Method.Multiplication).result).toBe(2500);
   });
 });

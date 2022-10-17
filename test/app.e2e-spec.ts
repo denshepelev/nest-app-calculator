@@ -17,8 +17,33 @@ describe('AppController (e2e)', () => {
 
   it('/ (GET)', () => {
     return request(app.getHttpServer())
-      .get('/')
+      .get('/calculate?firstNum=100&secondNum=10&method=DIV')
       .expect(200)
-      .expect('Hello World!');
+      .expect({ result: 10 });
+  });
+
+  it('/ (GET)', () => {
+    return request(app.getHttpServer())
+      .get('/calculate?firstNum=100&secondNum=0&method=DIV')
+      .expect(400)
+      .expect({ status: 400, message: 'Division by zero is forbidden' });
+  });
+
+  it('/ (GET)', () => {
+    return request(app.getHttpServer())
+      .get('/calculate?firstNum=100&secondNum=10&method=DIVV')
+      .expect(400)
+      .expect({ status: 400, message: 'Wrong operation was requested' });
+  });
+
+  it('/ (GET)', () => {
+    return request(app.getHttpServer())
+      .get('/calculate?firstNum=100t&secondNum=10&method=DIV')
+      .expect(400)
+      .expect({
+        statusCode: 400,
+        message: 'Validation failed (numeric string is expected)',
+        error: 'Bad Request',
+      });
   });
 });

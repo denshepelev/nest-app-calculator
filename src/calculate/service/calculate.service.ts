@@ -4,7 +4,7 @@ import { Method } from '../types/method.enum';
 
 @Injectable()
 export class CalculateService {
-  calculate(firstNum: number, secondNum: number, method: string): CalculateDto {
+  calculate(firstNum: number, secondNum: number, method: Method): CalculateDto {
     switch (method) {
       case Method.Addition: {
         return new CalculateDto(firstNum + secondNum);
