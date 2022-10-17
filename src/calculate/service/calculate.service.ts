@@ -9,7 +9,7 @@ export class CalculateService {
       case Method.Addition: {
         return new CalculateDto(firstNum + secondNum);
       }
-      case Method.Substraction: {
+      case Method.Subtraction: {
         return new CalculateDto(firstNum - secondNum);
       }
       case Method.Multiplication: {

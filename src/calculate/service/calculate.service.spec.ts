@@ -25,11 +25,19 @@ describe('ResultService', () => {
     expect(service.calculate(200, 50, Method.Addition).result).toBe(250);
   });
 
-  it('Should return result 100 for substraction', () => {
-    expect(service.calculate(150, 50, Method.Substraction).result).toBe(100);
+  it('Should return result 100 for subtraction', () => {
+    expect(service.calculate(150, 50, Method.Subtraction).result).toBe(100);
   });
 
   it('Should return result 2500 for multiplication', () => {
     expect(service.calculate(50, 50, Method.Multiplication).result).toBe(2500);
+  });
+
+  it('should return error on 0 division', () => {
+    try {
+      service.calculate(100, 0, Method.Division);
+    } catch (error) {
+      expect(error.message).toBe('Division by zero is forbidden');
+    }
   });
 });

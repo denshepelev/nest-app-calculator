@@ -9,19 +9,19 @@
 
 ## Swagger
 
-- Документация Swagger: http://localhost:3000/swagger-ui
+- Документация Swagger: <http://localhost:3000/swagger-ui>
 
 ## Request example
 
-1. http://localhost:3000/calculate?firstNum=100&secondNum=10&method=ADD
-2. http://localhost:3000/calculate?firstNum=50&secondNum=10&method=SUB
-3. http://localhost:3000/calculate?firstNum=20&secondNum=4&method=DIV
-4. http://localhost:3000/calculate?firstNum=80&secondNum=6&method=MUL
+1. <http://localhost:3000/calculate?firstNum=100&secondNum=10&method=ADD>
+2. <http://localhost:3000/calculate?firstNum=50&secondNum=10&method=SUB>
+3. <http://localhost:3000/calculate?firstNum=20&secondNum=4&method=DIV>
+4. <http://localhost:3000/calculate?firstNum=80&secondNum=6&method=MUL>
 
 ## Installation
 
 ```bash
-$ npm install
+npm install
 ```
 
 ## Running the app

@@ -15,28 +15,28 @@ describe('AppController (e2e)', () => {
     await app.init();
   });
 
-  it('/ (GET)', () => {
+  it('should return 10 for division', () => {
     return request(app.getHttpServer())
       .get('/calculate?firstNum=100&secondNum=10&method=DIV')
       .expect(200)
       .expect({ result: 10 });
   });
 
-  it('/ (GET)', () => {
+  it('should return error on 0 division', () => {
     return request(app.getHttpServer())
       .get('/calculate?firstNum=100&secondNum=0&method=DIV')
       .expect(400)
       .expect({ status: 400, message: 'Division by zero is forbidden' });
   });
 
-  it('/ (GET)', () => {
+  it('should return error on wrong operation', () => {
     return request(app.getHttpServer())
       .get('/calculate?firstNum=100&secondNum=10&method=DIVV')
       .expect(400)
       .expect({ status: 400, message: 'Wrong operation was requested' });
   });
 
-  it('/ (GET)', () => {
+  it('should return error validation failed', () => {
     return request(app.getHttpServer())
       .get('/calculate?firstNum=100t&secondNum=10&method=DIV')
       .expect(400)
