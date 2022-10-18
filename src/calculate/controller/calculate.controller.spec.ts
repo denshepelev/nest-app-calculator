@@ -22,7 +22,7 @@ describe('CalculateController', () => {
     calculate.mockReset();
   });
 
-  it('Should return result 110 for addition', () => {
+  it('Should call calculate service method', () => {
     controller.calculate(100, 10, Method.Addition);
     expect(calculate).toHaveBeenLastCalledWith(100, 10, Method.Addition);
   });
