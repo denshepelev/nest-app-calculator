@@ -42,6 +42,7 @@ $ npm run start:prod
 ```bash
 # unit tests
 $ npm run test
+$ npm run test:e2e
 ```
 
 ## See my other App for Neoflex Java Development
